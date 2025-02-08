@@ -1,7 +1,7 @@
 // Reverse of Queue using Stack
 //Approach- remove element and push in a stack then pop element and add to queue
 import java.util.*;
-class Main {
+class QueueReversal {
     public static void main(String[] args) {
         System.out.println("Hello");
         Queue<Integer>q= new LinkedList<>();
