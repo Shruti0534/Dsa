@@ -1,24 +1,21 @@
-// Online Java Compiler
-// Given two arrays a and b of equal length . Pair each a of b such that sum of absolute diffrence is minimum
 import java.util.*;
 class Main {
     public static void main(String[] args) {
         System.out.println("Try programiz.pro");
-        int a[]={1,2,3};
-        int b[]={2,1,3};
+        int a[]={1,2,3,4};
+        int b[]={2,1,3,5};
         absolute(a,b);
         
     }
     public static void absolute(int[] a, int[] b){
         int sum=0;
+        Arrays.sort(a);
+        Arrays.sort(b);
         for(int i=0;i<a.length;i++){
-            int max=Integer.MAX_VALUE;
-            for(int j=0;j<b.length;j++){
-                int s=Math.abs(a[i]-b[j]);
-                max=Math.min(max,s);
-                
-            }
-            sum=sum+max;
+           
+                int s=Math.abs(a[i]-b[i]);
+                sum=sum+s;
+            
         }
         System.out.println(sum);
     }
