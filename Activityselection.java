@@ -16,7 +16,7 @@ class Activityselection{
       int maxAct=1;
     ans.add(activities[0][0]0);
     int lastEnd=activities[0][2];
-    fot(int i=0;i<start.length;i++){
+    fot(int i=1;i<start.length;i++){
       if(activities[i][1]>=lastEnd){
         maxAct++;
         ans.add(activities[i][0]);
