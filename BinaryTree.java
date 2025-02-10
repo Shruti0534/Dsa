@@ -1,5 +1,6 @@
-import java.util.*;
-public class BinaryTree{
+
+ import java.util.*;
+public class preorder{
     static class Node{
         int data;
         Node left;
@@ -106,6 +107,17 @@ public class BinaryTree{
             int r=sumNode(root.right);
             return l+r+root.data;
         }
+        public static int Diameter(Node root){
+            if(root==null){
+                return 0;
+            }
+            int l=height(root.left);
+            int r=height(root.right);
+             int selfDiameter=l+r+1;
+            int ld=Diameter(root.left);
+            int rd=Diameter(root.right);
+            return Math.max(selfDiameter,Math.max(ld,rd));
+        }
 
     }
     public static void main(String args[]){
@@ -124,6 +136,7 @@ public class BinaryTree{
        System.out.println("height=" + tree.height(root));
        System.out.println("count of node"+tree.countNode(root));
        System.out.println("sum of node"+tree.sumNode(root));
+       System.out.println("Diameter"+tree.Diameter(root));
 
 
 
@@ -131,7 +144,7 @@ public class BinaryTree{
 
     }
     /* output
-    1
+   1
 1 2 4 5 3 6 
 4 2 5 1 3 6 
 4 5 2 6 3 1 
@@ -141,5 +154,6 @@ public class BinaryTree{
 height=3
 count of node6
 sum of node21
+Diameter5
  */
 }
